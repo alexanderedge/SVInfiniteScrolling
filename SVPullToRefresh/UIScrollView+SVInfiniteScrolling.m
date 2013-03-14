@@ -52,7 +52,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 
 @implementation UIScrollView (SVInfiniteScrolling)
 
-- (void)addInfiniteScrolling:(SVInfiniteScrollingPosition)position withActionHandler:(void (^)(void))actionHandler{
+- (void)addInfiniteScrollingWithActionHandler:(void (^)(void))actionHandler forPosition:(SVInfiniteScrollingPosition)position{
     
     if(![self infiniteScrollingViewForPosition:position]) {
         SVInfiniteScrollingView *view = [[SVInfiniteScrollingView alloc] initWithFrame:CGRectMake(0, (position == SVInfiniteScrollingPositionTop) ? -SVInfiniteScrollingViewHeight : self.contentSize.height, self.bounds.size.width, SVInfiniteScrollingViewHeight)];
@@ -72,13 +72,13 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         }
         
         [self setInfiniteScrollingView:view forPosition:position];
-        [self setShowsInfiniteScrolling:YES atPosition:position];
+        [self setShowsInfiniteScrolling:YES forPosition:position];
         
     }
     
 }
 
-- (void)triggerInfiniteScrollingAtPosition:(SVInfiniteScrollingPosition)position{
+- (void)triggerInfiniteScrollingForPosition:(SVInfiniteScrollingPosition)position{
     SVInfiniteScrollingView *view = [self infiniteScrollingViewForPosition:position];
     view.state = SVInfiniteScrollingStateTriggered;
     [view startAnimating];
@@ -117,7 +117,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
     return objc_getAssociatedObject(self, (position == SVInfiniteScrollingPositionTop) ? &UIScrollViewInfiniteScrollingViewTop : &UIScrollViewInfiniteScrollingViewBottom);
 }
 
-- (void)setShowsInfiniteScrolling:(BOOL)visible atPosition:(SVInfiniteScrollingPosition)position{
+- (void)setShowsInfiniteScrolling:(BOOL)visible forPosition:(SVInfiniteScrollingPosition)position{
     
     SVInfiniteScrollingView *view = [self infiniteScrollingViewForPosition:position];
     view.hidden = !visible;
@@ -150,7 +150,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
     
 }
 
-- (BOOL)showsInfiniteScrollingAtPosition:(SVInfiniteScrollingPosition)position{
+- (BOOL)showsInfiniteScrollingForPosition:(SVInfiniteScrollingPosition)position{
     
     return ![self infiniteScrollingViewForPosition:position].hidden;
     
@@ -181,7 +181,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 - (void)willMoveToSuperview:(UIView *)newSuperview {
     if (self.superview && newSuperview == nil) {
         UIScrollView *scrollView = (UIScrollView *)self.superview;
-        if ([scrollView showsInfiniteScrollingAtPosition:self.position]) {
+        if ([scrollView showsInfiniteScrollingForPosition:self.position]) {
           if (self.isObserving) {
             [scrollView removeObserver:self forKeyPath:@"contentOffset"];
             [scrollView removeObserver:self forKeyPath:@"contentSize"];

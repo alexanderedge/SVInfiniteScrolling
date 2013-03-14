@@ -18,12 +18,12 @@ typedef NS_ENUM(NSUInteger, SVInfiniteScrollingPosition){
 
 @interface UIScrollView (SVInfiniteScrolling)
 
-- (void)addInfiniteScrolling:(SVInfiniteScrollingPosition)position withActionHandler:(void (^)(void))actionHandler;
-- (void)triggerInfiniteScrollingAtPosition:(SVInfiniteScrollingPosition)position;
+- (void)addInfiniteScrollingWithActionHandler:(void (^)(void))actionHandler forPosition:(SVInfiniteScrollingPosition)position;
+- (void)triggerInfiniteScrollingForPosition:(SVInfiniteScrollingPosition)position;
 
 - (SVInfiniteScrollingView *)infiniteScrollingViewForPosition:(SVInfiniteScrollingPosition)position;
-- (BOOL)showsInfiniteScrollingAtPosition:(SVInfiniteScrollingPosition)position;
-- (void)setShowsInfiniteScrolling:(BOOL)visible atPosition:(SVInfiniteScrollingPosition)position;
+- (BOOL)showsInfiniteScrollingForPosition:(SVInfiniteScrollingPosition)position;
+- (void)setShowsInfiniteScrolling:(BOOL)visible forPosition:(SVInfiniteScrollingPosition)position;
 
 @end
 

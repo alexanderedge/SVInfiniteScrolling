@@ -47,7 +47,7 @@
     
     
     
-    [self.tableView addInfiniteScrolling:SVInfiniteScrollingPositionBottom withActionHandler:^{
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
         
         int64_t delayInSeconds = 1.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -61,9 +61,9 @@
             
         });
         
-    }];
+    } forPosition:SVInfiniteScrollingPositionBottom];
     
-    [self.tableView addInfiniteScrolling:SVInfiniteScrollingPositionTop withActionHandler:^{
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
         
         int64_t delayInSeconds = 1.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
@@ -77,7 +77,7 @@
             
         });
         
-    }];
+    } forPosition:SVInfiniteScrollingPositionBottom];
     
     // trigger the refresh manually at the end of viewDidLoad
     [tableView triggerPullToRefresh];
