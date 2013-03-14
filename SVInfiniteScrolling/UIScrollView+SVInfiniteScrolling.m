@@ -71,6 +71,8 @@ UIEdgeInsets scrollViewOriginalContentInsets;
             view.originalBottomInset = self.contentInset.bottom;
         }
         
+        
+        
         [self setInfiniteScrollingView:view forPosition:position];
         [self setShowsInfiniteScrolling:YES forPosition:position];
         
@@ -139,6 +141,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
             view.isObserving = YES;
             [view setNeedsLayout];
             view.frame = CGRectMake(0, (position == SVInfiniteScrollingPositionTop) ? -SVInfiniteScrollingViewHeight : self.contentSize.height, view.bounds.size.width, SVInfiniteScrollingViewHeight);
+            
             double delayInSeconds = 0.0;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -162,6 +165,8 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 
 #pragma mark - SVInfiniteScrollingView
 @implementation SVInfiniteScrollingView
+
+static const CGFloat kAnimationDuration = 0.3f;
 
 - (id)initWithFrame:(CGRect)frame {
     if(self = [super initWithFrame:frame]) {
@@ -208,7 +213,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         currentInsets.bottom = self.originalBottomInset;
     }
     
-    [self setScrollViewContentInset:currentInsets];
+    self.scrollView.contentInset = currentInsets;
 }
 
 - (void)setScrollViewContentInsetForInfiniteScrollingPosition:(SVInfiniteScrollingPosition)position {
@@ -216,21 +221,20 @@ UIEdgeInsets scrollViewOriginalContentInsets;
     
     if (position == SVInfiniteScrollingPositionTop) {
         currentInsets.top = self.originalTopInset + SVInfiniteScrollingViewHeight;
-        self.scrollView.contentInset = currentInsets;
         
     }
     else
     {
         currentInsets.bottom = self.originalBottomInset + SVInfiniteScrollingViewHeight;
-        self.scrollView.contentInset = currentInsets;
+        
     }
     
-    [self setScrollViewContentInset:currentInsets];
+    self.scrollView.contentInset = currentInsets;
     
 }
 
 - (void)setScrollViewContentInset:(UIEdgeInsets)contentInset{
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:kAnimationDuration
                           delay:0
                         options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
@@ -370,7 +374,15 @@ UIEdgeInsets scrollViewOriginalContentInsets;
                 [self.activityIndicatorView stopAnimating];
                 
                 if (self.position == SVInfiniteScrollingPositionTop) {
-                    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+                    
+                    [UIView animateWithDuration:kAnimationDuration
+                                          delay:0
+                                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState
+                                     animations:^{
+                                         self.scrollView.contentOffset = CGPointMake(0, 0);
+                                     }
+                                     completion:NULL];
+                    
                 }
                 
                 break;
