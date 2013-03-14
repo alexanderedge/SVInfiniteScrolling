@@ -10,41 +10,36 @@
 		22E0D9191545EE5B00BB6BB5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E0D9181545EE5B00BB6BB5 /* UIKit.framework */; };
 		22E0D91B1545EE5B00BB6BB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E0D91A1545EE5B00BB6BB5 /* Foundation.framework */; };
 		22E0D91D1545EE5B00BB6BB5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E0D91C1545EE5B00BB6BB5 /* CoreGraphics.framework */; };
-		22E0D9231545EE5B00BB6BB5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22E0D9211545EE5B00BB6BB5 /* InfoPlist.strings */; };
-		22E0D9251545EE5B00BB6BB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0D9241545EE5B00BB6BB5 /* main.m */; };
-		22E0D9291545EE5B00BB6BB5 /* SVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0D9281545EE5B00BB6BB5 /* SVAppDelegate.m */; };
-		22E0D92C1545EE5B00BB6BB5 /* SVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0D92B1545EE5B00BB6BB5 /* SVViewController.m */; };
-		22E0D92F1545EE5B00BB6BB5 /* SVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E0D92D1545EE5B00BB6BB5 /* SVViewController.xib */; };
 		22E0D9411545EE9000BB6BB5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22E0D9401545EE9000BB6BB5 /* QuartzCore.framework */; };
 		22E0D94B1545F63300BB6BB5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 22E0D94A1545F63300BB6BB5 /* README.md */; };
-		22FDEC971639082E00DB53A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22FDEC961639082E00DB53A8 /* Default-568h@2x.png */; };
-		8E7FDB661640EBA200EE63E5 /* SVRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E7FDB641640EBA200EE63E5 /* SVRootViewController.m */; };
-		8E7FDB671640EBA200EE63E5 /* SVRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FDB651640EBA200EE63E5 /* SVRootViewController.xib */; };
 		DE72508716F1549600D7146F /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = DE72508616F1549600D7146F /* UIScrollView+SVInfiniteScrolling.m */; };
+		DE72509716F155A300D7146F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE72509616F155A300D7146F /* Default-568h@2x.png */; };
+		DE72509F16F1560E00D7146F /* SVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE72509C16F1560E00D7146F /* SVAppDelegate.m */; };
+		DE7250A016F1560E00D7146F /* SVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE72509E16F1560E00D7146F /* SVViewController.m */; };
+		DE7250A316F1562F00D7146F /* SVViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7250A116F1562F00D7146F /* SVViewController.xib */; };
+		DE7250A616F1563300D7146F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE7250A416F1563300D7146F /* InfoPlist.strings */; };
+		DE7250AA16F1563C00D7146F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7250A716F1563C00D7146F /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		22E0D9141545EE5B00BB6BB5 /* SVPullToRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVPullToRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E0D9141545EE5B00BB6BB5 /* SVInfiniteScrollingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVInfiniteScrollingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E0D9181545EE5B00BB6BB5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22E0D91A1545EE5B00BB6BB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22E0D91C1545EE5B00BB6BB5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		22E0D9201545EE5B00BB6BB5 /* SVPullToRefreshDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SVPullToRefreshDemo-Info.plist"; sourceTree = "<group>"; };
-		22E0D9221545EE5B00BB6BB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		22E0D9241545EE5B00BB6BB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		22E0D9261545EE5B00BB6BB5 /* SVPullToRefreshDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVPullToRefreshDemo-Prefix.pch"; sourceTree = "<group>"; };
-		22E0D9271545EE5B00BB6BB5 /* SVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVAppDelegate.h; sourceTree = "<group>"; };
-		22E0D9281545EE5B00BB6BB5 /* SVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVAppDelegate.m; sourceTree = "<group>"; };
-		22E0D92A1545EE5B00BB6BB5 /* SVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVViewController.h; sourceTree = "<group>"; };
-		22E0D92B1545EE5B00BB6BB5 /* SVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVViewController.m; sourceTree = "<group>"; };
-		22E0D92E1545EE5B00BB6BB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SVViewController.xib; sourceTree = "<group>"; };
 		22E0D9401545EE9000BB6BB5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22E0D94A1545F63300BB6BB5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		22FDEC961639082E00DB53A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		8E7FDB631640EBA200EE63E5 /* SVRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRootViewController.h; sourceTree = "<group>"; };
-		8E7FDB641640EBA200EE63E5 /* SVRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRootViewController.m; sourceTree = "<group>"; };
-		8E7FDB651640EBA200EE63E5 /* SVRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SVRootViewController.xib; sourceTree = "<group>"; };
 		DE72508516F1549600D7146F /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		DE72508616F1549600D7146F /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		DE72509616F155A300D7146F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		DE72509B16F1560E00D7146F /* SVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVAppDelegate.h; path = SVInfiniteScrollingDemo/SVAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		DE72509C16F1560E00D7146F /* SVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVAppDelegate.m; path = SVInfiniteScrollingDemo/SVAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		DE72509D16F1560E00D7146F /* SVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVViewController.h; path = SVInfiniteScrollingDemo/SVViewController.h; sourceTree = SOURCE_ROOT; };
+		DE72509E16F1560E00D7146F /* SVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVViewController.m; path = SVInfiniteScrollingDemo/SVViewController.m; sourceTree = SOURCE_ROOT; };
+		DE7250A216F1562F00D7146F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = SVInfiniteScrollingDemo/en.lproj/SVViewController.xib; sourceTree = SOURCE_ROOT; };
+		DE7250A516F1563300D7146F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = SVInfiniteScrollingDemo/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		DE7250A716F1563C00D7146F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SVInfiniteScrollingDemo/main.m; sourceTree = SOURCE_ROOT; };
+		DE7250A816F1563C00D7146F /* SVInfiniteScrollingDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SVInfiniteScrollingDemo-Info.plist"; path = "SVInfiniteScrollingDemo/SVInfiniteScrollingDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DE7250A916F1563C00D7146F /* SVInfiniteScrollingDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SVInfiniteScrollingDemo-Prefix.pch"; path = "SVInfiniteScrollingDemo/SVInfiniteScrollingDemo-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +71,7 @@
 		22E0D9151545EE5B00BB6BB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22E0D9141545EE5B00BB6BB5 /* SVPullToRefreshDemo.app */,
+				22E0D9141545EE5B00BB6BB5 /* SVInfiniteScrollingDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,14 +90,11 @@
 		22E0D91E1545EE5B00BB6BB5 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				22E0D9271545EE5B00BB6BB5 /* SVAppDelegate.h */,
-				22E0D9281545EE5B00BB6BB5 /* SVAppDelegate.m */,
-				8E7FDB631640EBA200EE63E5 /* SVRootViewController.h */,
-				8E7FDB641640EBA200EE63E5 /* SVRootViewController.m */,
-				8E7FDB651640EBA200EE63E5 /* SVRootViewController.xib */,
-				22E0D92A1545EE5B00BB6BB5 /* SVViewController.h */,
-				22E0D92B1545EE5B00BB6BB5 /* SVViewController.m */,
-				22E0D92D1545EE5B00BB6BB5 /* SVViewController.xib */,
+				DE72509B16F1560E00D7146F /* SVAppDelegate.h */,
+				DE72509C16F1560E00D7146F /* SVAppDelegate.m */,
+				DE72509D16F1560E00D7146F /* SVViewController.h */,
+				DE72509E16F1560E00D7146F /* SVViewController.m */,
+				DE7250A116F1562F00D7146F /* SVViewController.xib */,
 				22E0D91F1545EE5B00BB6BB5 /* Supporting Files */,
 			);
 			name = Demo;
@@ -112,11 +104,11 @@
 		22E0D91F1545EE5B00BB6BB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				22FDEC961639082E00DB53A8 /* Default-568h@2x.png */,
-				22E0D9201545EE5B00BB6BB5 /* SVPullToRefreshDemo-Info.plist */,
-				22E0D9211545EE5B00BB6BB5 /* InfoPlist.strings */,
-				22E0D9241545EE5B00BB6BB5 /* main.m */,
-				22E0D9261545EE5B00BB6BB5 /* SVPullToRefreshDemo-Prefix.pch */,
+				DE7250A716F1563C00D7146F /* main.m */,
+				DE7250A816F1563C00D7146F /* SVInfiniteScrollingDemo-Info.plist */,
+				DE7250A916F1563C00D7146F /* SVInfiniteScrollingDemo-Prefix.pch */,
+				DE7250A416F1563300D7146F /* InfoPlist.strings */,
+				DE72509616F155A300D7146F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -134,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22E0D9131545EE5B00BB6BB5 /* SVPullToRefreshDemo */ = {
+		22E0D9131545EE5B00BB6BB5 /* SVInfiniteScrollingDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22E0D9321545EE5B00BB6BB5 /* Build configuration list for PBXNativeTarget "SVPullToRefreshDemo" */;
+			buildConfigurationList = 22E0D9321545EE5B00BB6BB5 /* Build configuration list for PBXNativeTarget "SVInfiniteScrollingDemo" */;
 			buildPhases = (
 				22E0D9101545EE5B00BB6BB5 /* Sources */,
 				22E0D9111545EE5B00BB6BB5 /* Frameworks */,
@@ -146,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = SVPullToRefreshDemo;
+			name = SVInfiniteScrollingDemo;
 			productName = SVPullToRefreshDemo;
-			productReference = 22E0D9141545EE5B00BB6BB5 /* SVPullToRefreshDemo.app */;
+			productReference = 22E0D9141545EE5B00BB6BB5 /* SVInfiniteScrollingDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +153,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Home;
 			};
-			buildConfigurationList = 22E0D90E1545EE5B00BB6BB5 /* Build configuration list for PBXProject "SVPullToRefreshDemo" */;
+			buildConfigurationList = 22E0D90E1545EE5B00BB6BB5 /* Build configuration list for PBXProject "SVInfiniteScrollingDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -173,7 +165,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22E0D9131545EE5B00BB6BB5 /* SVPullToRefreshDemo */,
+				22E0D9131545EE5B00BB6BB5 /* SVInfiniteScrollingDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -183,11 +175,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E0D9231545EE5B00BB6BB5 /* InfoPlist.strings in Resources */,
-				22E0D92F1545EE5B00BB6BB5 /* SVViewController.xib in Resources */,
 				22E0D94B1545F63300BB6BB5 /* README.md in Resources */,
-				22FDEC971639082E00DB53A8 /* Default-568h@2x.png in Resources */,
-				8E7FDB671640EBA200EE63E5 /* SVRootViewController.xib in Resources */,
+				DE72509716F155A300D7146F /* Default-568h@2x.png in Resources */,
+				DE7250A316F1562F00D7146F /* SVViewController.xib in Resources */,
+				DE7250A616F1563300D7146F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,31 +189,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E0D9251545EE5B00BB6BB5 /* main.m in Sources */,
-				22E0D9291545EE5B00BB6BB5 /* SVAppDelegate.m in Sources */,
-				22E0D92C1545EE5B00BB6BB5 /* SVViewController.m in Sources */,
-				8E7FDB661640EBA200EE63E5 /* SVRootViewController.m in Sources */,
 				DE72508716F1549600D7146F /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				DE72509F16F1560E00D7146F /* SVAppDelegate.m in Sources */,
+				DE7250A016F1560E00D7146F /* SVViewController.m in Sources */,
+				DE7250AA16F1563C00D7146F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		22E0D9211545EE5B00BB6BB5 /* InfoPlist.strings */ = {
+		DE7250A116F1562F00D7146F /* SVViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				22E0D9221545EE5B00BB6BB5 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		22E0D92D1545EE5B00BB6BB5 /* SVViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22E0D92E1545EE5B00BB6BB5 /* en */,
+				DE7250A216F1562F00D7146F /* en */,
 			);
 			name = SVViewController.xib;
+			sourceTree = "<group>";
+		};
+		DE7250A416F1563300D7146F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE7250A516F1563300D7146F /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -285,8 +275,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SVPullToRefreshDemo/SVPullToRefreshDemo-Prefix.pch";
-				INFOPLIST_FILE = "SVPullToRefreshDemo/SVPullToRefreshDemo-Info.plist";
+				GCC_PREFIX_HEADER = "SVInfiniteScrollingDemo/SVInfiniteScrollingDemo-Prefix.pch";
+				INFOPLIST_FILE = "SVInfiniteScrollingDemo/SVInfiniteScrollingDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -297,8 +287,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SVPullToRefreshDemo/SVPullToRefreshDemo-Prefix.pch";
-				INFOPLIST_FILE = "SVPullToRefreshDemo/SVPullToRefreshDemo-Info.plist";
+				GCC_PREFIX_HEADER = "SVInfiniteScrollingDemo/SVInfiniteScrollingDemo-Prefix.pch";
+				INFOPLIST_FILE = "SVInfiniteScrollingDemo/SVInfiniteScrollingDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -308,7 +298,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22E0D90E1545EE5B00BB6BB5 /* Build configuration list for PBXProject "SVPullToRefreshDemo" */ = {
+		22E0D90E1545EE5B00BB6BB5 /* Build configuration list for PBXProject "SVInfiniteScrollingDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22E0D9301545EE5B00BB6BB5 /* Debug */,
@@ -317,7 +307,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22E0D9321545EE5B00BB6BB5 /* Build configuration list for PBXNativeTarget "SVPullToRefreshDemo" */ = {
+		22E0D9321545EE5B00BB6BB5 /* Build configuration list for PBXNativeTarget "SVInfiniteScrollingDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22E0D9331545EE5B00BB6BB5 /* Debug */,
