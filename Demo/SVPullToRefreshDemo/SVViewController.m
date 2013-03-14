@@ -26,8 +26,9 @@
     for(int i=0; i<15; i++)
         [self.dataSource addObject:[NSDate dateWithTimeIntervalSinceNow:-(i*90)]];
     
-    __weak SVViewController *weakSelf = self;
+    __weak __typeof(&*self)weakSelf = self;
     
+    /*
     // setup pull-to-refresh
     [self.tableView addPullToRefreshWithActionHandler:^{
         
@@ -42,11 +43,13 @@
             [weakSelf.tableView.pullToRefreshView stopAnimating];
         });
     }];
+    */
     
-    // setup infinite scrolling
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-
-        int64_t delayInSeconds = 2.0;
+    
+    
+    [self.tableView addInfiniteScrolling:SVInfiniteScrollingPositionBottom withActionHandler:^{
+        
+        int64_t delayInSeconds = 1.0;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             [weakSelf.tableView beginUpdates];
@@ -54,8 +57,26 @@
             [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:weakSelf.dataSource.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
             [weakSelf.tableView endUpdates];
             
-            [weakSelf.tableView.infiniteScrollingView stopAnimating];
+            [[weakSelf.tableView infiniteScrollingViewForPosition:SVInfiniteScrollingPositionBottom] stopAnimating];
+            
         });
+        
+    }];
+    
+    [self.tableView addInfiniteScrolling:SVInfiniteScrollingPositionTop withActionHandler:^{
+        
+        int64_t delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [weakSelf.tableView beginUpdates];
+            [weakSelf.dataSource insertObject:[weakSelf.dataSource[0] dateByAddingTimeInterval:+90] atIndex:0];
+            [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
+            [weakSelf.tableView endUpdates];
+            
+            [[weakSelf.tableView infiniteScrollingViewForPosition:SVInfiniteScrollingPositionTop] stopAnimating];
+            
+        });
+        
     }];
     
     // trigger the refresh manually at the end of viewDidLoad

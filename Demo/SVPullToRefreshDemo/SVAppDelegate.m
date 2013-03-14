@@ -8,7 +8,7 @@
 
 #import "SVAppDelegate.h"
 
-#import "SVRootViewController.h"
+#import "SVViewController.h"
 
 @implementation SVAppDelegate
 
@@ -18,7 +18,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SVRootViewController alloc] initWithNibName:@"SVRootViewController" bundle:nil]];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SVViewController alloc] initWithNibName:@"SVViewController" bundle:nil]];
     [self.window makeKeyAndVisible];
     return YES;
 }
