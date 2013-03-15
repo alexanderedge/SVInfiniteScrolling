@@ -388,10 +388,13 @@ static const CGFloat kAnimationDuration = 0.3f;
                 break;
                 
             case SVInfiniteScrollingStateTriggered:
+            case SVInfiniteScrollingStateAll:
                 break;
                 
             case SVInfiniteScrollingStateLoading:
                 [self.activityIndicatorView startAnimating];
+                break;
+            default:
                 break;
         }
     }
