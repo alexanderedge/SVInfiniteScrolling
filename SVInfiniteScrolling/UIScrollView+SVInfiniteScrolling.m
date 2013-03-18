@@ -377,9 +377,9 @@ static const CGFloat kAnimationDuration = 0.3f;
                     
                     [UIView animateWithDuration:kAnimationDuration
                                           delay:0
-                                        options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState
+                                        options:0
                                      animations:^{
-                                         self.scrollView.contentOffset = CGPointMake(0, 0);
+                                         self.scrollView.contentOffset = CGPointMake(0, self.scrollView.contentOffset.y - SVInfiniteScrollingViewHeight);
                                      }
                                      completion:NULL];
                     
