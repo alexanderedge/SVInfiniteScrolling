@@ -10,7 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIScrollView+SVInfiniteScrolling.h"
 
-
 static CGFloat const SVInfiniteScrollingViewHeight = 60;
 
 @interface SVInfiniteScrollingDotView : UIView
@@ -48,9 +47,13 @@ static CGFloat const SVInfiniteScrollingViewHeight = 60;
 
 static char UIScrollViewInfiniteScrollingViewTop;
 static char UIScrollViewInfiniteScrollingViewBottom;
+static char kSVInfiniteScrollingUpdatingKey;
+
 UIEdgeInsets scrollViewOriginalContentInsets;
 
 @implementation UIScrollView (SVInfiniteScrolling)
+
+
 
 - (void)addInfiniteScrollingWithActionHandler:(void (^)(void))actionHandler forPosition:(SVInfiniteScrollingPosition)position{
     
@@ -111,7 +114,6 @@ UIEdgeInsets scrollViewOriginalContentInsets;
             break;
     }
     
-    
 }
 
 - (SVInfiniteScrollingView *)infiniteScrollingViewForPosition:(SVInfiniteScrollingPosition)position {
@@ -135,6 +137,8 @@ UIEdgeInsets scrollViewOriginalContentInsets;
     }
     else {
         if (!view.isObserving) {
+            
+            objc_setAssociatedObject(self, &kSVInfiniteScrollingUpdatingKey, @(YES), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             [self addObserver:view forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
             [self addObserver:view forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
             [view setScrollViewContentInsetForInfiniteScrollingPosition:position];
@@ -146,6 +150,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
             dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
             dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                 self.contentOffset = CGPointMake(0, 0);
+                objc_setAssociatedObject(self, &kSVInfiniteScrollingUpdatingKey, @(NO), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
             });
         }
     }
@@ -268,11 +273,15 @@ static const CGFloat kAnimationDuration = 0.3f;
         CGFloat scrollViewContentHeight = self.scrollView.contentSize.height;
         CGFloat scrollOffsetThreshold = 0;
         
+        NSNumber *updating = objc_getAssociatedObject(self.scrollView, &kSVInfiniteScrollingUpdatingKey);
+        
+        BOOL isUpdating = [updating boolValue];
+        
         if (self.position == SVInfiniteScrollingPositionTop){
             scrollOffsetThreshold = 0;
             if(!self.scrollView.isDragging && self.state == SVInfiniteScrollingStateTriggered)
                 self.state = SVInfiniteScrollingStateLoading;
-            else if(contentOffset.y < scrollOffsetThreshold && self.state == SVInfiniteScrollingStateStopped && self.scrollView.isDragging)
+            else if(contentOffset.y < scrollOffsetThreshold && self.state == SVInfiniteScrollingStateStopped && !isUpdating)
                 self.state = SVInfiniteScrollingStateTriggered;
             else if(contentOffset.y > scrollOffsetThreshold  && self.state != SVInfiniteScrollingStateStopped)
                 self.state = SVInfiniteScrollingStateStopped;
@@ -282,7 +291,7 @@ static const CGFloat kAnimationDuration = 0.3f;
             scrollOffsetThreshold = scrollViewContentHeight-self.scrollView.bounds.size.height;
             if(!self.scrollView.isDragging && self.state == SVInfiniteScrollingStateTriggered)
                 self.state = SVInfiniteScrollingStateLoading;
-            else if(contentOffset.y > scrollOffsetThreshold && self.state == SVInfiniteScrollingStateStopped && self.scrollView.isDragging)
+            else if(contentOffset.y > scrollOffsetThreshold && self.state == SVInfiniteScrollingStateStopped && !isUpdating)
                 self.state = SVInfiniteScrollingStateTriggered;
             else if(contentOffset.y < scrollOffsetThreshold  && self.state != SVInfiniteScrollingStateStopped)
                 self.state = SVInfiniteScrollingStateStopped;
