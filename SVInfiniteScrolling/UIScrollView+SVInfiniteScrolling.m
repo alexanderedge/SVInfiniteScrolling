@@ -383,14 +383,15 @@ static const CGFloat kAnimationDuration = 0.3f;
                 [self.activityIndicatorView stopAnimating];
                 
                 if (self.position == SVInfiniteScrollingPositionTop) {
-                    
-                    [UIView animateWithDuration:kAnimationDuration
-                                          delay:0
-                                        options:0
-                                     animations:^{
-                                         self.scrollView.contentOffset = CGPointMake(0, self.scrollView.contentOffset.y - SVInfiniteScrollingViewHeight);
-                                     }
-                                     completion:NULL];
+                    if (!self.scrollView.isDragging) {
+                        [UIView animateWithDuration:kAnimationDuration
+                                              delay:0
+                                            options:0
+                                         animations:^{
+                                             self.scrollView.contentOffset = CGPointMake(0, self.scrollView.contentOffset.y - SVInfiniteScrollingViewHeight);
+                                         }
+                                         completion:NULL];
+                    }
                     
                 }
                 
